@@ -1,0 +1,201 @@
+:root {
+  --clr-main-bg: #000;
+  --clr-text: #fff;
+  --clr-purple-light: #5929d2;;
+  --clr-purple-dark: #ae0bcf;
+  --clr-blue-light: #2bbcff;
+  --clr-blue-dark: #2f03aa;
+
+  --clr-text-light: rgba(255, 255, 255, 0.8);
+  --clr-black-light: #1d1d1d;
+
+  --ff-style: "Orbitron", sans-serif;
+  --ff-regular: "Montserrat", sans-serif;
+
+  --fs-hero-header: 48px;
+  --fs-header: 42px;
+  --fs-title-text: 20px;
+  --fs-text: 16px;
+  --fs-regular: 14px;
+  --fs-icon: 36px;
+  --fs-small-icon: 24px;
+
+  --fw-200: 200;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+  --fw-bolder: 900;
+
+  --gen-padding: 24px 40px;
+
+  --gen-transition: 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.timeline-section {
+  align-items: flex-start;
+}
+
+.timeline-box {
+  position: relative;
+  padding-block: 1rem;
+}
+
+.timeline-box > .timeline-item:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.timeline-event-title {
+  margin-bottom: 16px;
+  max-width: 100%;
+  position: relative;
+  font-size: 20px;
+}
+
+.timeline-item .timeline-date {
+  font-size: 20px;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+  order: 2;
+}
+
+.timeline-item:nth-child(even) .timeline-item-content,
+.timeline-item:nth-child(odd) .timeline-date {
+  text-align: right;
+  padding-right: 48px;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-content,
+.timeline-item:nth-child(even) .timeline-date {
+  padding-left: 48px;
+}
+
+.timeline-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: var(--clr-purple-light);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-event-title::before,
+.timeline-event-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+}
+
+.timeline-event-title::before {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--clr-main-bg);
+  border: 3px solid var(--clr-blue-light);
+  transform: translate(-50%, -50%);
+}
+
+.timeline-event-title::after {
+  height: 2px;
+  width: 48px;
+  transform: translateY(-50%);
+  background-color: var(--clr-blue-light);
+  border-radius: 2px;
+}
+
+.timeline-item:nth-child(odd) .timeline-event-title::before {
+  left: -48px;
+}
+.timeline-item:nth-child(even) .timeline-event-title::before {
+  left: calc(100% + 48px);
+}
+.timeline-item:nth-child(odd) .timeline-event-title::after {
+  left: -48px;
+}
+.timeline-item:nth-child(even) .timeline-event-title::after {
+  left: 100%;
+}
+
+@media only screen and (max-width: 624px) {
+  .timeline-item:nth-child(even) .timeline-item-content,
+  .timeline-item:nth-child(odd) .timeline-date {
+    padding-right: 24px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-item-content,
+  .timeline-item:nth-child(even) .timeline-date {
+    padding-left: 24px;
+  }
+
+  .timeline-event-title::after {
+    width: 24px;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-event-title::before {
+    left: -24px;
+  }
+  .timeline-item:nth-child(even) .timeline-event-title::before {
+    left: calc(100% + 24px);
+  }
+  .timeline-item:nth-child(odd) .timeline-event-title::after {
+    left: -24px;
+  }
+  .timeline-item:nth-child(even) .timeline-event-title::after {
+    left: 100%;
+  }
+}
+
+@media only screen and (max-width: 448px) {
+  .timeline-box {
+    padding-left: 24px;
+    margin-left: 2px;
+  }
+  .timeline-item {
+    grid-template-columns: auto;
+    gap: 1.5rem;
+  }
+  .timeline-item:nth-child(even) .timeline-date {
+    order: 1;
+  }
+  .timeline-item:nth-child(even) .timeline-item-content {
+    order: 2;
+  }
+  .timeline-item:nth-child(even) .timeline-item-content,
+  .timeline-item:nth-child(odd) .timeline-date {
+    text-align: left;
+    padding-right: 0;
+  }
+  .timeline-item:nth-child(odd) .timeline-item-content,
+  .timeline-item:nth-child(even) .timeline-date {
+    padding-left: 0;
+  }
+  .timeline-box::after {
+    left: 0;
+  }
+  .timeline-item:nth-child(even) .timeline-event-title::after,
+  .timeline-item:nth-child(even) .timeline-event-title::before {
+    left: -24px;
+  }
+}

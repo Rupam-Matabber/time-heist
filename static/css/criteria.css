@@ -1,0 +1,41 @@
+/* .criteria-container {
+  max-width: 1080px;
+  margin: auto;
+} */
+
+.criteria-content-heading {
+  /* color: var(--clr-blue-light); */
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 2rem;
+  font-family: var(--ff-style);
+}
+#top-head {
+  padding-top: 0rem;
+}
+#top-para {
+  padding-top: 1.2rem;
+}
+.criteria-content p {
+  font-family: var(--fs-text);
+  text-align: left;
+  padding-top: 0.75rem;
+  color: #ebecee;
+}
+.criteria-content .para-arrow {
+  color: var(--clr-blue-light);
+  font-weight: bold;
+}
+.criteria-content-heading span {
+  color: #ebecee;
+  font-weight: 400;
+}
+@media only screen and (max-width: 448px) {
+  .criteria-content-heading {
+    font-size: var(--fs-text);
+  }
+
+  .criteria-content p {
+    font-size: var(--fs-regular);
+  }
+}

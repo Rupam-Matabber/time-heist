@@ -1,0 +1,12 @@
+.get-set-go-container .container-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.get-set-go-container .container-title h1 {
+  margin-bottom: 3rem;
+}
+.get-text {
+  max-width: 540px;
+  margin-bottom: 2rem;
+}

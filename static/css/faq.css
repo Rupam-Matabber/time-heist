@@ -1,0 +1,118 @@
+.faq-container {
+  max-width: 1080px;
+  margin: auto;
+}
+
+#faq .wrapper {
+  flex-direction: column;
+}
+
+.accordion {
+  margin-block: 27px;
+}
+
+.accordion .accordion-item {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion .accordion-title {
+  color: var(--clr-text);
+}
+
+.accordion button {
+  font-family: var(--ff-regular);
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: var(--clr-text);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+}
+
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 8px;
+  left: 4px;
+  width: 10px;
+  height: 2px;
+  background: var(--clr-blue-light);
+}
+
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 8px;
+  width: 2px;
+  height: 10px;
+  background: var(--clr-blue-light);
+}
+
+.accordion button[aria-expanded="true"] {
+  color: var(--clr-blue-light);
+}
+
+.accordion button[aria-expanded="true"] .icon::after {
+  width: 0;
+}
+
+.accordion button[aria-expanded="true"] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.accordion .accordion-content p {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 2em 0;
+  color: #ebecee;
+}
+
+.faq-contact{
+  display: inline;
+  font-weight: 600;
+  color: var(--clr-blue-light);
+}
+
+@media only screen and (max-width: 448px) {
+  .accordion-title,
+  .accordion-content {
+    font-size: 14px;
+  }
+
+  .accordion .accordion-content p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,27 @@
+.sponsors{
+    width: 40%;
+    
+}
+.sponsors p{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--ff-style);
+    text-align: center;
+}
+.sponsor-logos{
+    margin-top: 14px;
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center;
+    align-items:center;   
+}
+.vertical-line{
+    display: inline-block;
+    border-left: 2.5px solid var(--clr-purple-light);
+    margin: 0 10px;
+    height: 50px;
+}
+
+.sponsor-logo-image{
+    /* border: 2px solid red; */
+}
